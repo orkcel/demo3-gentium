@@ -83,6 +83,36 @@ header {
                     text-align: center;
                     gap: 30px;
 
+                    .active:after {
+                        content: '';
+                        width: 0;
+                        left: 0;
+                        bottom: -5px;
+                        height: 2px;
+                        background-color: #e3204f;
+                        transition: 0.7s;
+                        width: 40%;
+                    }
+
+                    /* HOVER */
+                    li {
+                        position: relative;
+                    }
+
+                    li:after {
+                        position: absolute;
+                        content: '';
+                        width: 0;
+                        left: 0;
+                        bottom: -5px;
+                        height: 2px;
+                        background-color: #e3204f;
+                        transition: 0.7s
+                    }
+
+                    li:hover:after {
+                        width: 40%;
+                    }
                 }
             }
         }
