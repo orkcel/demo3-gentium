@@ -1,3 +1,7 @@
+:root {
+    --pink-color: #e3204f;
+}
+
 @font-face {
     font-family: 'AvantGarde';
     src: url('../fonts/AvantGarde-Bold.woff2');
@@ -8,6 +12,7 @@
     src: url('../fonts/tradegothic-bold.woff2');
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
     margin: 0;
@@ -32,7 +37,7 @@ body {
 
 }
 
-.wrapper {
+.site-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -64,6 +69,8 @@ header {
 
             h2 {
                 font-size: 36px;
+                margin-right: 60px;
+
             }
         }
 
@@ -134,65 +141,272 @@ header {
     }
 }
 
-/* HERO */
-.hero {
+/* HERO SECTION STYLES */
+.hero-section {
     background-color: black;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
     font-family: 'AvantGarde';
+    width: 100%;
 
     .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        max-width: 1260px;
+        width: 100%;
+        height: 960px;
+        margin: 0 auto;
+        margin: 70px 30px;
 
         .hero-image {
             display: flex;
+            position: absolute;
+            height: 700px;
+            top: 0;
+            right: 20px;
+            z-index: 1;
+
+
         }
 
         .hero-title_and_button {
             display: flex;
             flex-direction: column;
+            position: absolute;
             width: auto;
             height: auto;
             gap: 60px;
-            margin-top: 150px;
+            top: 0;
+            left: 0;
+            align-items: start;
+            padding: 60px 0;
+            z-index: 2;
+
+            .line {
+                height: 3px;
+                width: 100px;
+                background-color: #e3204f;
+            }
 
             .hero-title {
 
                 h2 {
-
                     width: 840px;
                     font-size: 78px;
+                    text-align: start;
                 }
             }
 
             .hero-button {
+                display: flex;
+                max-width: 190px;
+                width: 100%;
+                height: 60px;
+                font-size: 16px;
+                color: white;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                border: 1px solid #e3204f;
+                cursor: pointer;
+                overflow: hidden;
 
-                button {
-                    width: 190px;
-                    height: 60px;
-                    border: #e3204f solid;
-                    background-color: black;
+                .hero-button_fill {
+                    width: 0;
+                    transition: width 0.5s ease-in-out;
+                    height: 100%;
+                    background-color: #e3204f;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    overflow: hidden;
+                }
+
+                p {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    z-index: 2;
+                }
+
+                &:hover {
+                    .hero-button_fill {
+                        width: 100%;
+                    }
                 }
             }
+        }
+
+        .boxes-row {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+            max-width: 1260px;
+            height: 460px;
+            width: 100%;
+            z-index: 3;
+            margin-top: 480px;
+
+            .box-wrapper {
+                display: flex;
+                max-width: 380px;
+                width: 100%;
+                position: relative;
+                background-color: rgb(27, 27, 27);
+
+                &.box-line::after {
+                    position: absolute;
+                    content: "";
+                    left: 50%;
+                    bottom: -30px;
+                    height: 30px;
+                    width: 1px;
+                    background-color: #e3204f;
+                    transform: translate(-50%);
+                }
+
+                .box-fill {
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--pink-color);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                    transition: opacity 0.5s linear;
+                }
+
+                .box-decoration {
+                    position: absolute;
+                    left: 0;
+                    bottom: -20px;
+                    background-color: transparent;
+                    width: 400px;
+                    height: 70px;
+                    flex-direction: column;
+                    align-items: end;
+                    justify-content: end;
+                    display: flex;
+
+                    .decoration-element {
+                        transition: background-color 0.5s linear;
+                    }
+
+                    .decoration-bottom {
+                        height: 20px;
+                        width: 100%;
+                        background-color: #e3204f;
+                    }
+
+                    .decoration-right {
+                        width: 20px;
+                        height: 40px;
+                        background-color: #e3204f;
+                    }
+                }
+
+                &:hover {
+                    .box-fill {
+                        opacity: 1;
+                    }
+
+                    .box-content {
+                        .box-icon {
+                            color: white;
+                        }
+                    }
+
+                    .box-decoration {
+                        .decoration-bottom {
+                            background-color: #d3123f;
+                        }
+
+                        .decoration-right {
+                            background-color: #d3123f;
+                        }
+
+                    }
+                }
+
+                .box-content {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    align-items: start;
+                    padding: 60px 40px;
+                    z-index: 2;
+
+                    .box-icon {
+                        font-size: 65px;
+                        color: #e3204f;
+                        margin-bottom: 70px;
+                        transition: color 0.5s linear;
+                    }
+
+                    .box-content-title {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+
+                        h3 {
+                            text-align: start;
+                            font-size: 24px;
+                            margin-bottom: 8px;
+                        }
+
+                        p {
+                            text-align: start;
+                            font-family: 'TradeGothic';
+                            font-weight: 400;
+                            font-size: 17px;
+                            margin-top: 20px;
+                        }
+
+                        .line {
+                            height: 3px;
+                            width: 40px;
+                            background-color: #ffffff;
+
+                        }
+                    }
+                }
+
+                &.solid-wrapper {
+                    background-color: #e3204f;
+
+                    .box-content {
+                        .box-icon {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
         }
 
     }
 }
 
 /* SERVICES */
-.services {
-    background-color: black;
+.services-section {
+    background-color: #101010;
     width: 100%;
-    height: 890px;
     display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
     font-family: 'AvantGarde';
     font-weight: 600;
+    justify-content: center;
 
     .services-content {
+        max-width: 1260px;
+        width: 100%;
+        padding: 70px 0;
+
 
         .services-title {
             h2 {
