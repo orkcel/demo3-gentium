@@ -16,6 +16,16 @@
 
   <body>
     <div class="site-wrapper">
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="close-button" id="mobileClose">X</div>
+        <h2>Home</h2>
+        <h2>Services</h2>
+        <h2>Work</h2>
+        <h2>About</h2>
+        <h2>Client</h2>
+        <h2>Blog</h2>
+        <h2>Contact</h2>
+      </div>
       <!-- HEADER -->
       <header>
         <div class="header-container">
@@ -26,6 +36,9 @@
             <nav>
               <div class="nav-bar">
                 <ul class="nav-links">
+                  <div class="mobile-button" id="mobileButton">
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
                   <li class="active"><a href="#">Home</a></li>
                   <li><a href="#">Services</a></li>
                   <li><a href="#">Work</a></li>
@@ -120,7 +133,7 @@
 
         <!-- SERVICES SECTION -->
         <section class="services-section">
-          <div class="services-content">
+          <div class="services-content contentium">
             <div class="services-title">
               <div class="line"></div>
               <h2>Services.</h2>
@@ -136,9 +149,7 @@
                   <h5>Digital strategy</h5>
                   <i class="fa-solid fa-arrow-right"></i>
                 </div>
-             
               </div>
-
               <div class="tile-wrapper">
                 <i class="fa-solid fa-book fade-icon"></i>
                 <div class="tile-fill"></div>
@@ -517,4 +528,5 @@
       </footer>
     </div>
   </body>
+  <script src="src/js/main.js"></script>
 </html>
